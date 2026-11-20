@@ -1,0 +1,28 @@
+
+.product-sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.product-sort label {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-sort select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .product-sort {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
