@@ -22,6 +22,7 @@ import ProductSort from "./components/ProductSort";
 import ProductFilter from "./components/ProductFilter";
 
 // Product details
+
 const products = [
   {
     id: 1,
@@ -30,8 +31,7 @@ const products = [
     price: 1499,
     oldPrice: 2499,
     rating: 4.5,
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
   },
   {
     id: 2,
@@ -40,8 +40,7 @@ const products = [
     price: 1999,
     oldPrice: 2999,
     rating: 4.7,
-    image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
   },
   {
     id: 3,
@@ -50,8 +49,7 @@ const products = [
     price: 2499,
     oldPrice: 3999,
     rating: 4.3,
-    image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
   },
   {
     id: 4,
@@ -60,10 +58,118 @@ const products = [
     price: 1799,
     oldPrice: 2599,
     rating: 4.6,
-    image:
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"
+  },
+  {
+    id: 5,
+    name: "Modern Sunglasses",
+    category: "Accessories",
+    price: 799,
+    oldPrice: 1299,
+    rating: 4.4,
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500"
+  },
+  {
+    id: 6,
+    name: "Skincare Beauty Set",
+    category: "Beauty",
+    price: 999,
+    oldPrice: 1499,
+    rating: 4.5,
+    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500"
+  },
+  {
+    id: 7,
+    name: "Minimalist Table Lamp",
+    category: "Home & Living",
+    price: 1199,
+    oldPrice: 1899,
+    rating: 4.2,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500"
+  },
+  {
+    id: 8,
+    name: "Casual Cotton T-Shirt",
+    category: "Fashion",
+    price: 599,
+    oldPrice: 999,
+    rating: 4.3,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+  },
+  {
+    id: 9,
+    name: "Portable Bluetooth Speaker",
+    category: "Electronics",
+    price: 1299,
+    oldPrice: 1999,
+    rating: 4.6,
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"
+  },
+  {
+    id: 10,
+    name: "Elegant Wrist Watch",
+    category: "Accessories",
+    price: 1599,
+    oldPrice: 2499,
+    rating: 4.5,
+    image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500"
+  },
+  {
+    id: 11,
+    name: "Decorative Indoor Plant",
+    category: "Home & Living",
+    price: 499,
+    oldPrice: 799,
+    rating: 4.1,
+    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500"
+  },
+  {
+    id: 12,
+    name: "Luxury Perfume",
+    category: "Beauty",
+    price: 1399,
+    oldPrice: 1999,
+    rating: 4.7,
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"
+  },
+  {
+    id: 13,
+    name: "Travel Backpack",
+    category: "Accessories",
+    price: 1099,
+    oldPrice: 1699,
+    rating: 4.4,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"
+  },
+  {
+    id: 14,
+    name: "Ceramic Coffee Mug Set",
+    category: "Home & Living",
+    price: 699,
+    oldPrice: 999,
+    rating: 4.2,
+    image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500"
+  },
+  {
+    id: 15,
+    name: "Wireless Computer Mouse",
+    category: "Electronics",
+    price: 899,
+    oldPrice: 1399,
+    rating: 4.3,
+    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500"
+  },
+  {
+    id: 16,
+    name: "Women's Casual Dress",
+    category: "Fashion",
+    price: 1299,
+    oldPrice: 1899,
+    rating: 4.6,
+    image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500"
   }
 ];
+
 
 const categories = [
   "All",
