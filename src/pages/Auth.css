@@ -1,105 +1,166 @@
 
+/* Authentication Page */
+
 .auth-page {
   min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #eeeaff, #f7f7fc, #e9e5ff);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: #eaf1ff;
+  padding: 30px 20px;
+  box-sizing: border-box;
 }
+
+/* Auth Card */
 
 .auth-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 430px;
+  background: #ffffff;
   padding: 40px;
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(36, 31, 89, 0.12);
+  box-sizing: border-box;
   text-align: center;
 }
 
+/* Logo */
+
 .auth-logo {
   display: inline-block;
-  color: #222;
+  color: #20213a;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 800;
   text-decoration: none;
   margin-bottom: 25px;
+  letter-spacing: -1px;
 }
 
 .auth-logo span {
-  color: #2874f0;
+  color: #6558d3;
 }
 
+/* Heading */
+
 .auth-card h2 {
-  margin-bottom: 10px;
+  color: #20213a;
+  font-size: 26px;
+  margin: 0 0 10px;
 }
 
 .auth-subtitle {
-  color: #777;
-  margin-bottom: 25px;
+  color: #858499;
   font-size: 14px;
+  margin-bottom: 30px;
 }
+
+/* Form */
 
 .auth-card form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .auth-card input {
   width: 100%;
-  padding: 14px;
-  border: 1px solid #ddd;
-  border-radius: 7px;
+  height: 48px;
+  padding: 0 15px;
+  border: 1px solid #e3e1ef;
+  border-radius: 9px;
   outline: none;
+  background: #fafaff;
+  color: #20213a;
   font-size: 14px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+.auth-card input::placeholder {
+  color: #aaa9b8;
 }
 
 .auth-card input:focus {
-  border-color: #2874f0;
+  border-color: #6558d3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(101, 88, 211, 0.1);
 }
 
+/* Submit Button */
+
 .auth-card form button {
-  padding: 14px;
+  height: 49px;
   border: none;
-  border-radius: 7px;
-  background: #2874f0;
-  color: white;
+  border-radius: 9px;
+  background: #6558d3;
+  color: #ffffff;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s ease;
 }
 
 .auth-card form button:hover {
-  background: #1558c0;
+  background: #5144bd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(101, 88, 211, 0.2);
 }
 
+/* Login / Signup Switch */
+
 .auth-switch {
-  margin-top: 22px;
+  color: #77758a;
   font-size: 14px;
-  color: #666;
+  margin-top: 25px;
 }
 
 .auth-switch button {
   border: none;
   background: none;
-  color: #2874f0;
-  font-weight: bold;
+  color: #6558d3;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   margin-left: 5px;
 }
 
+.auth-switch button:hover {
+  text-decoration: underline;
+}
+
+/* Back Home */
+
 .auth-home {
   display: inline-block;
   margin-top: 22px;
-  color: #2874f0;
+  color: #77758a;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
+.auth-home:hover {
+  color: #6558d3;
+}
+
+/* Responsive */
+
 @media (max-width: 480px) {
+  .auth-page {
+    padding: 20px 15px;
+  }
+
   .auth-card {
-    padding: 25px 20px;
+    padding: 30px 22px;
+  }
+
+  .auth-card h2 {
+    font-size: 23px;
+  }
+
+  .auth-logo {
+    font-size: 27px;
   }
 }

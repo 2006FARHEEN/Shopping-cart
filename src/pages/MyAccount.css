@@ -1,81 +1,192 @@
 
+/* My Account Page */
+
 .account-container {
-  min-height: 80vh;
+  min-height: 100vh;
+  width: 100%;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #eeeaff, #f7f7fc);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f6fa;
-  padding: 30px;
-}
-
-.account-card {
-  background: white;
-  width: 100%;
-  max-width: 450px;
-  padding: 35px;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.account-card h1 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.profile-icon {
-  font-size: 60px;
-  margin: 15px 0;
-}
-
-.account-details {
-  text-align: left;
-  background: #f5f6fa;
-  padding: 15px;
-  border-radius: 10px;
-  margin: 25px 0;
-}
-
-.account-details p {
-  margin: 12px 0;
-  color: #444;
-}
-
-.account-card input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  font-size: 15px;
-}
-
-.account-btn,
-.logout-btn,
-.cancel-btn {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 7px;
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
   box-sizing: border-box;
 }
 
-.account-btn {
-  background: #2874f0;
-  color: white;
+/* Account Card */
+
+.account-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(36, 31, 89, 0.1);
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.logout-btn {
-  background: #e53935;
-  color: white;
+/* Heading */
+
+.account-card h1 {
+  color: #20213a;
+  font-size: 30px;
+  margin: 0 0 25px;
 }
+
+.account-card h2 {
+  color: #20213a;
+  font-size: 21px;
+  margin: 15px 0 25px;
+}
+
+/* Profile Icon */
+
+.profile-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #eeeaff;
+  color: #6558d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  border: 4px solid #f7f5ff;
+}
+
+/* Account Details */
+
+.account-details {
+  background: #f8f7ff;
+  padding: 18px 22px;
+  border-radius: 12px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.account-details p {
+  color: #66677b;
+  font-size: 15px;
+  margin: 12px 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.account-details strong {
+  color: #20213a;
+  display: inline-block;
+  min-width: 65px;
+}
+
+/* Input Fields */
+
+.account-card input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  margin-bottom: 15px;
+  border: 1px solid #e3e1ef;
+  border-radius: 9px;
+  background: #fafaff;
+  color: #20213a;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.account-card input:focus {
+  border-color: #6558d3;
+  box-shadow: 0 0 0 3px rgba(101, 88, 211, 0.1);
+}
+
+/* Common Buttons */
+
+.account-btn,
+.cancel-btn,
+.logout-btn {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+/* Primary Button */
+
+.account-btn {
+  background: #6558d3;
+  color: #ffffff;
+  border: 1px solid #6558d3;
+}
+
+.account-btn:hover {
+  background: #5144bd;
+  transform: translateY(-2px);
+}
+
+/* Cancel Button */
 
 .cancel-btn {
-  background: #777;
-  color: white;
+  background: #ffffff;
+  color: #66677b;
+  border: 1px solid #dedce9;
+}
+
+.cancel-btn:hover {
+  background: #f5f4fa;
+}
+
+/* Logout Button */
+
+.logout-btn {
+  background: #fff0f1;
+  color: #d94b5b;
+  border: 1px solid #f4d1d5;
+}
+
+.logout-btn:hover {
+  background: #ffe2e5;
+}
+
+/* Login Required State */
+
+.account-container > h2 {
+  color: #20213a;
+  text-align: center;
+}
+
+.account-container > a {
+  color: #6558d3;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Responsive */
+
+@media (max-width: 500px) {
+  .account-container {
+    padding: 25px 15px;
+  }
+
+  .account-card {
+    padding: 28px 20px;
+  }
+
+  .account-card h1 {
+    font-size: 26px;
+  }
+
+  .account-card h2 {
+    font-size: 19px;
+  }
 }

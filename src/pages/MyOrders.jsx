@@ -49,8 +49,8 @@ function MyOrders() {
                     </span>
 
                     <strong>
-                      ₹{item.price * item.quantity}
-                    </strong>
+  ₹{(item.price * item.quantity).toLocaleString("en-IN")}
+</strong>
                   </div>
                 ))}
               </div>
@@ -61,8 +61,8 @@ function MyOrders() {
                 </p>
 
                 <h3>
-                  Total: ₹{order.total}
-                </h3>
+  Total: ₹{order.total.toLocaleString("en-IN")}
+</h3>
               </div>
 
               <div className="order-address">
