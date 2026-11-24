@@ -1,5 +1,6 @@
 
-import './Cart.css';
+import { Link } from "react-router-dom";
+import "./Cart.css";
 
 function Cart({ cart, setCart }) {
 
@@ -26,7 +27,7 @@ function Cart({ cart, setCart }) {
     setCart(cart.filter(item => item.id !== id));
   };
 
-  // Calculate subtotal
+  // Calculate total
   const subtotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -38,106 +39,162 @@ function Cart({ cart, setCart }) {
   return (
     <div className="cart-page">
 
-      <h1>My Shopping Cart 🛒</h1>
+      {/* Header */}
+      <div className="cart-header">
+        <Link to="/" className="cart-logo">ShopEase</Link>
+        <Link to="/" className="back-shopping">← Continue Shopping</Link>
+      </div>
 
-      {cart.length === 0 ? (
+      <div className="cart-container">
 
-        <div className="empty-cart">
-          <h2>Your cart is empty!</h2>
-          <p>Looks like you haven't added anything yet.</p>
-          <a href="/">Continue Shopping</a>
+        <div className="cart-title">
+          <div>
+            <h1>Shopping Cart</h1>
+            <p>Review your items before checkout.</p>
+          </div>
+
+          <span>{cart.length} Items</span>
         </div>
 
-      ) : (
+        {cart.length === 0 ? (
 
-        <div className="cart-layout">
+          <div className="empty-cart">
+            <div className="empty-cart-icon">🛍️</div>
+            <h2>Your cart is waiting!</h2>
+            <p>You haven't added any products yet.</p>
 
-          <div className="cart-items">
+            <Link to="/" className="continue-shopping-btn">
+              Start Shopping
+            </Link>
+          </div>
 
-            {cart.map(item => (
+        ) : (
 
-              <div className="cart-item" key={item.id}>
+          <div className="cart-layout">
 
-                <img src={item.image} alt={item.name} />
+            {/* Cart Products */}
+            <div className="cart-items">
 
-                <div className="cart-details">
+              <div className="cart-section-heading">
+                <h2>Your Items</h2>
+                <span>{cart.length} products</span>
+              </div>
 
-                  <h3>{item.name}</h3>
+              {cart.map(item => (
 
-                  <p className="cart-price">
-                    ₹{item.price.toLocaleString("en-IN")}
-                  </p>
+                <div className="cart-item" key={item.id}>
 
-                  <div className="quantity-controls">
+                  <div className="cart-product-image">
+                    <img src={item.image} alt={item.name} />
+                  </div>
 
-                    <button onClick={() => decreaseQuantity(item.id)}>
-                      -
-                    </button>
+                  <div className="cart-details">
 
-                    <span>{item.quantity}</span>
+                    <p className="cart-category">
+                      {item.category}
+                    </p>
 
-                    <button onClick={() => increaseQuantity(item.id)}>
-                      +
-                    </button>
+                    <h3>{item.name}</h3>
+
+                    <p className="cart-price">
+                      ₹{item.price.toLocaleString("en-IN")}
+                    </p>
+
+                    <div className="cart-actions">
+
+                      <div className="quantity-controls">
+
+                        <button
+                          onClick={() => decreaseQuantity(item.id)}
+                          aria-label="Decrease quantity"
+                        >
+                          −
+                        </button>
+
+                        <span>{item.quantity}</span>
+
+                        <button
+                          onClick={() => increaseQuantity(item.id)}
+                          aria-label="Increase quantity"
+                        >
+                          +
+                        </button>
+
+                      </div>
+
+                      <button
+                        className="remove-button"
+                        onClick={() => removeItem(item.id)}
+                      >
+                        Remove
+                      </button>
+
+                    </div>
 
                   </div>
 
-                  <button
-                    className="remove-button"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Remove
-                  </button>
+                  <div className="cart-item-total">
+                    <span>Item Total</span>
+                    <strong>
+                      ₹{(item.price * item.quantity).toLocaleString("en-IN")}
+                    </strong>
+                  </div>
 
                 </div>
 
-                <h3>
-                  ₹{(item.price * item.quantity).toLocaleString("en-IN")}
-                </h3>
+              ))}
 
+            </div>
+
+            {/* Order Summary */}
+            <div className="cart-summary">
+
+              <h2>Order Summary</h2>
+
+              <div className="summary-row">
+                <span>Subtotal</span>
+                <span>₹{subtotal.toLocaleString("en-IN")}</span>
               </div>
 
-            ))}
+              <div className="summary-row">
+                <span>Delivery Charges</span>
+                <span className="free-delivery">
+                  {delivery === 0 ? "FREE" : `₹${delivery}`}
+                </span>
+              </div>
+
+              {subtotal > 0 && subtotal < 999 && (
+                <p className="delivery-message">
+                  Add ₹{(999 - subtotal).toLocaleString("en-IN")} more for free delivery!
+                </p>
+              )}
+
+              <div className="summary-divider"></div>
+
+              <div className="summary-total">
+                <strong>Total Amount</strong>
+                <strong>₹{total.toLocaleString("en-IN")}</strong>
+              </div>
+
+              <Link to="/checkout" className="checkout-button">
+                Proceed to Checkout →
+              </Link>
+
+              <p className="secure-message">
+                🔒 Secure demo checkout
+              </p>
+
+            </div>
 
           </div>
 
-          <div className="cart-summary">
+        )}
 
-            <h2>Order Summary</h2>
+      </div>
 
-            <div>
-              <span>Subtotal</span>
-              <span>₹{subtotal.toLocaleString("en-IN")}</span>
-            </div>
-
-            <div>
-              <span>Delivery</span>
-              <span>{delivery === 0 ? "FREE" : `₹${delivery}`}</span>
-            </div>
-
-            <hr />
-
-            <div className="total">
-              <strong>Total</strong>
-              <strong>₹{total.toLocaleString("en-IN")}</strong>
-            </div>
-
-            <button
-              className="checkout-button"
-              onClick={() => alert("Checkout feature coming soon!")}
-            >
-              Proceed to Checkout
-            </button>
-
-            <a href="/" className="continue-shopping">
-              Continue Shopping
-            </a>
-
-          </div>
-
-        </div>
-
-      )}
+      <footer className="cart-footer">
+        © 2026 ShopEase. Happy Shopping!
+      </footer>
 
     </div>
   );
